@@ -293,6 +293,9 @@ public class MainActivity extends FragmentActivity implements
         mSignOutButton.setEnabled(true);
         mRevokeButton.setEnabled(true);
 
+        Intent myIntent = new Intent(MainActivity.this, ProfilePage.class);
+        MainActivity.this.startActivity(myIntent);
+
         // Hide the sign-in options, they no longer apply
         findViewById(R.id.layout_server_auth).setVisibility(View.GONE);
 
