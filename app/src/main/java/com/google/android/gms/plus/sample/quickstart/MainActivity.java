@@ -288,13 +288,15 @@ public class MainActivity extends FragmentActivity implements
         // Reaching onConnected means we consider the user signed in.
         Log.i(TAG, "onConnected");
 
+
         // Update the user interface to reflect that the user is signed in.
         mSignInButton.setEnabled(false);
         mSignOutButton.setEnabled(true);
         mRevokeButton.setEnabled(true);
+        String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
 
-        Intent myIntent = new Intent(MainActivity.this, ProfilePage.class);
-        MainActivity.this.startActivity(myIntent);
+//        Intent myIntent = new Intent(MainActivity.this, ProfilePage.class);
+//        MainActivity.this.startActivity(myIntent);
 
         // Hide the sign-in options, they no longer apply
         findViewById(R.id.layout_server_auth).setVisibility(View.GONE);
